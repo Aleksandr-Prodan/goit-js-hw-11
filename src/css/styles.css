@@ -9,17 +9,15 @@
 @import url('./base.css');
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  /* дозволяє елементам переноситись на новий рядок */
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  /* відстань між елементами */
-  justify-content: center;
-  /* центрування по горизонталі */
-  padding: 20px;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1600px;
 }
 
-/* Картка з фото */
 .photo-card {
   display: flex;
   flex-direction: column;
@@ -36,25 +34,44 @@
   transform: scale(1.03);
 }
 
-/* Зображення */
 .photo-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-/* Інформація під зображенням */
-.photo-card .info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 10px;
+.info {
+  margin-top: 10px;
   font-size: 14px;
-  color: #333;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gallery-item .info p {
+  margin: 0;
+  white-space: nowrap;
 }
 
 .photo-card .info p {
   margin: 5px 0;
   width: 48%;
-  /* 2 елементи в ряд */
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px auto 20px auto;
+  max-width: 600px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
 }
